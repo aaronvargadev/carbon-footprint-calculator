@@ -15,7 +15,9 @@
     <main>
         <div class="planet-face">
 
-            <svg width="571" height="358" viewBox="0 0 571 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <svg class="hover-planet" width="571" height="358" viewBox="0 0 571 358" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M137.258 180.42C137.258 200.054 141.125 219.496 148.639 237.636C156.153 255.776 167.166 272.258 181.049 286.142C194.933 300.025 211.415 311.038 229.555 318.552C247.695 326.066 267.137 329.933 286.771 329.933C306.406 329.933 325.848 326.066 343.988 318.552C362.128 311.038 378.61 300.025 392.494 286.142C406.377 272.258 417.39 255.776 424.904 237.636C432.418 219.496 436.285 200.054 436.285 180.42C436.285 160.785 432.418 141.343 424.904 123.203C417.39 105.063 406.377 88.5811 392.494 74.6974C378.61 60.8138 362.128 49.8007 343.988 42.2869C325.848 34.7732 306.406 30.9059 286.771 30.9059C267.137 30.9059 247.695 34.7732 229.555 42.2869C211.415 49.8007 194.933 60.8138 181.049 74.6974C167.166 88.5811 156.153 105.063 148.639 123.203C141.125 141.343 137.258 160.785 137.258 180.42Z"
                     fill="#44C0C6" />
@@ -52,8 +54,10 @@
             </svg>
 
         </div>
+        <p>What is your mode of transportation?</p>
         <nav>
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            <button id="car-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-fuel-icon lucide-fuel">
                     <line x1="3" x2="15" y1="22" y2="22" />
@@ -61,8 +65,8 @@
                     <path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18" />
                     <path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5" />
                 </svg> Car</button>
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            <button id="bus-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-bus-icon lucide-bus">
                     <path d="M8 6v6" />
                     <path d="M15 6v6" />
@@ -73,16 +77,16 @@
                     <path d="M9 18h5" />
                     <circle cx="16" cy="18" r="2" />
                 </svg> Bus</button>
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            <button id="bike-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-bike-icon lucide-bike">
                     <circle cx="18.5" cy="17.5" r="3.5" />
                     <circle cx="5.5" cy="17.5" r="3.5" />
                     <circle cx="15" cy="5" r="1" />
                     <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
                 </svg> Bike</button>
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            <button id="walk-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-footprints-icon lucide-footprints">
                     <path
                         d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
@@ -92,6 +96,11 @@
                     <path d="M4 13h4" />
                 </svg> Walk</button>
         </nav>
+        <div class="slider-container">
+            <p>What is your daily commute distance one-way (in miles)?</p>
+            <input type="range" id="commute-distance" name="commute-distance" min="0" max="100" step="5" value="0">
+            <span id="distance-value">0 miles</span>
+        </div>
     </main>
     <footer>
         <p>Created by Aaron Varga.</p>

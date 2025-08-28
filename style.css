@@ -1,9 +1,35 @@
+/* Hovering planet bounce animation */
+.hover-planet {
+    animation: hover-bounce 3s linear infinite;
+}
+
+@keyframes hover-bounce {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
     background-color: #111;
     color: #eee;
     font-family: "Inter", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 header, footer, nav {
@@ -18,6 +44,9 @@ main, header, footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+footer {
+    margin-top: auto;
 }
 
 nav {
@@ -51,4 +80,42 @@ button:hover {
 
 button svg {
     width: 1rem;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 25px;
+    background: #000;
+    outline: none;
+    padding-right: .5rem;
+    margin-bottom: 1rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #60C13D;
+    cursor: pointer;
+    margin-left: .25rem;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #60C13D;
+    cursor: pointer;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
 }
