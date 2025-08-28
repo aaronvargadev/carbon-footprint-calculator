@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 });
 
-// Make button backgrounds in nav only stay #44FF00 when selected
+// Use a class for selection so hover works on unselected buttons
 const navButtons = document.querySelectorAll('nav button');
 navButtons.forEach(button => {
 	button.addEventListener('click', () => {
-		navButtons.forEach(btn => btn.style.backgroundColor = '#60C13D');
-		button.style.backgroundColor = '#44FF00';
+		navButtons.forEach(btn => btn.classList.remove('selected'));
+		button.classList.add('selected');
 	});
 });
