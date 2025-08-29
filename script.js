@@ -10,10 +10,11 @@ const planetFace = document.querySelector(".planet-face");
 // slider
 const commuteDistance = document.querySelector("#commute-distance");
 const distanceValue = document.querySelector("#distance-value");
+const slider = document.querySelector('.slider-container input[type="range"]');
+const sliderContainer = document.querySelector('.slider-container');
+
 // Add persistent blue border to slider thumb after moving from zero
-document.addEventListener('DOMContentLoaded', function() {
-	const slider = document.querySelector('.slider-container input[type="range"]');
-	const sliderContainer = document.querySelector('.slider-container');
+document.addEventListener('DOMContentLoaded', function () {
 	if (slider && sliderContainer) {
 		function checkAndSetThumbBorder() {
 			if (parseFloat(slider.value) > 0) {
@@ -192,3 +193,34 @@ walkButton.addEventListener("click", () => {
 // AND the slider value is greater than 0
 // Otherwise, a message of some kind will appear so let the user know
 // to make both selections before clicking "Get Results"
+const getResultsButton = document.getElementById("get-results-button");
+
+getResultsButton.addEventListener("click", function () {
+	const selectedButton = document.querySelector("button.selected");
+	const sliderValue = parseFloat(document.querySelector("input[type='range']").value);
+
+	if (!selectedButton || sliderValue <= 0) {
+		console.log("Please select a mode of transport and enter a distance greater than 0.");
+		return;
+	}
+
+	let carbonPerMile = 0;
+	let mode = "";
+
+	if (selectedButton === carButton) {
+		carbonPerMile = 0.89; // kg CO2 per mile for car
+		mode = "gasoline car";
+	} else if (selectedButton === busButton) {
+		carbonPerMile = 0.15; // kg CO2 per mile for bus (approximate)
+		mode = "bus";
+	} else if (selectedButton === bikeButton) {
+		carbonPerMile = 0.0; // bike is considered zero emissions
+		mode = "bike";
+	} else if (selectedButton === walkButton) {
+		carbonPerMile = 0.0; // walking is considered zero emissions
+		mode = "walking";
+	}
+
+	const totalCarbon = sliderValue * 2 * carbonPerMile;
+	console.log(`Estimated daily carbon footprint for a round-trip commute of ${sliderValue * 2} miles using ${mode}: ${totalCarbon.toFixed(2)} kg CO2`);
+});

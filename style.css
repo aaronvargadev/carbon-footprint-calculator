@@ -2,12 +2,15 @@
 .slider-thumb-blue input[type="range"]::-webkit-slider-thumb {
     border: 3px solid #44C0C6;
 }
+
 .slider-thumb-blue input[type="range"]::-moz-range-thumb {
     border: 3px solid #44C0C6;
 }
+
 .slider-thumb-blue input[type="range"]::-ms-thumb {
     border: 3px solid #44C0C6;
 }
+
 /* Hovering planet bounce animation */
 .hover-planet {
     animation: hover-bounce 3s linear infinite;
@@ -48,6 +51,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 header,
