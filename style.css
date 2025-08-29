@@ -51,7 +51,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 header,
@@ -80,6 +79,12 @@ nav {
     display: flex;
     flex-direction: row;
     gap: .5rem;
+}
+
+#transportation-mode-question {
+    max-width: 375px;
+    text-align: center;
+    line-height: 24px;
 }
 
 button {

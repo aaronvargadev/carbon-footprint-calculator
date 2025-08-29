@@ -200,7 +200,7 @@ getResultsButton.addEventListener("click", function () {
 	const sliderValue = parseFloat(document.querySelector("input[type='range']").value);
 
 	if (!selectedButton || sliderValue <= 0) {
-		console.log("Please select a mode of transport and enter a distance greater than 0.");
+		alert("Please select a mode of transport and enter a distance greater than 0.");
 		return;
 	}
 
@@ -222,5 +222,14 @@ getResultsButton.addEventListener("click", function () {
 	}
 
 	const totalCarbon = sliderValue * 2 * carbonPerMile;
+	const navBar = document.getElementById("nav");
+	const sliderContainer = document.querySelector(".slider-container");
+	const transportModeQuestion = document.querySelector("#transportation-mode-question");
+
+	navBar.style.display = "none";
+	sliderContainer.style.display = "none";
+	getResultsButton.style.display = "none";
+	transportModeQuestion.innerHTML = `Estimated daily carbon footprint for a round-trip commute of ${sliderValue * 2} miles using ${mode}:<br><br><strong>${totalCarbon.toFixed(2)} kg CO2</strong>`;
+
 	console.log(`Estimated daily carbon footprint for a round-trip commute of ${sliderValue * 2} miles using ${mode}: ${totalCarbon.toFixed(2)} kg CO2`);
 });
