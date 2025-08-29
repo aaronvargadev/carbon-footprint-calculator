@@ -3,23 +3,32 @@
     animation: hover-bounce 3s linear infinite;
 }
 
+.planet-face {
+    margin-bottom: 1rem;
+}
+
 @keyframes hover-bounce {
     0% {
         transform: translateY(0);
     }
+
     25% {
         transform: translateY(-5px);
     }
+
     50% {
         transform: translateY(0);
     }
+
     75% {
         transform: translateY(5px);
     }
+
     100% {
         transform: translateY(0);
     }
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
@@ -31,11 +40,15 @@ body {
     flex-direction: column;
 }
 
-header, footer, nav {
+header,
+footer,
+nav {
     padding: 1rem 0;
 }
 
-main, header, footer {
+main,
+header,
+footer {
     margin: 0 auto;
     max-width: 768px;
     width: 100%;

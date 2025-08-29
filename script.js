@@ -7,6 +7,15 @@ const walkButton = document.getElementById("walk-button");
 // earth face animation
 const planetFace = document.querySelector(".planet-face");
 
+// slider
+const commuteDistance = document.querySelector("#commute-distance");
+const distanceValue = document.querySelector("#distance-value");
+
+commuteDistance.addEventListener("input", () => {
+	// Handle slider input
+	distanceValue.textContent = commuteDistance.value + ' miles';
+});
+
 carButton.addEventListener("click", () => {
 	// Handle car button click
 	carButton.classList.add("selected");
@@ -162,3 +171,10 @@ walkButton.addEventListener("click", () => {
 </svg>
 `;
 });
+
+// notes for later:
+// the input validation will be set by
+// IF the class name of "selected" is on one of the buttons
+// AND the slider value is greater than 0
+// Otherwise, a message of some kind will appear so let the user know
+// to make both selections before clicking "Get Results"
