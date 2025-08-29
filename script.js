@@ -10,6 +10,20 @@ const planetFace = document.querySelector(".planet-face");
 // slider
 const commuteDistance = document.querySelector("#commute-distance");
 const distanceValue = document.querySelector("#distance-value");
+// Add persistent blue border to slider thumb after moving from zero
+document.addEventListener('DOMContentLoaded', function() {
+	const slider = document.querySelector('.slider-container input[type="range"]');
+	const sliderContainer = document.querySelector('.slider-container');
+	if (slider && sliderContainer) {
+		function checkAndSetThumbBorder() {
+			if (parseFloat(slider.value) > 0) {
+				sliderContainer.classList.add('slider-thumb-blue');
+			}
+		}
+		slider.addEventListener('input', checkAndSetThumbBorder);
+		slider.addEventListener('change', checkAndSetThumbBorder);
+	}
+});
 
 commuteDistance.addEventListener("input", () => {
 	// Handle slider input
