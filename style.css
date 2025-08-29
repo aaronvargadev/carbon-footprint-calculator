@@ -1,3 +1,13 @@
+/* Persistent blue border for slider thumb */
+.slider-thumb-blue input[type="range"]::-webkit-slider-thumb {
+    border: 3px solid #44C0C6;
+}
+.slider-thumb-blue input[type="range"]::-moz-range-thumb {
+    border: 3px solid #44C0C6;
+}
+.slider-thumb-blue input[type="range"]::-ms-thumb {
+    border: 3px solid #44C0C6;
+}
 /* Hovering planet bounce animation */
 .hover-planet {
     animation: hover-bounce 3s linear infinite;
@@ -101,6 +111,7 @@ button svg {
 
 .selected {
     background-color: #44FF00;
+    border: 3px solid #44C0C6;
 }
 
 input[type="range"] {
@@ -132,6 +143,10 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
     background: #60C13D;
     cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    border: 3px solid #44C0C6;
 }
 
 .slider-container {
